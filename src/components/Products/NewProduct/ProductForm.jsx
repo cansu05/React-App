@@ -2,41 +2,54 @@ import { useState } from "react";
 import "./ProductForm.css";
 
 const ProductForm = () => {
-  //   const [productName, setProductName] = useState();
-  //   const [productPrice, setProductPrice] = useState();
-  //   const [imageUrl, setImageUrl] = useState();
+  // ** çoklu state kullanmı
+  const [productName, setProductName] = useState();
+  const [productPrice, setProductPrice] = useState();
+  const [imageUrl, setImageUrl] = useState();
 
-  const [productData, setProductData] = useState({
-    productName: "",
-    productPrice: "",
-    imageUrl: "",
-  });
+  //   const [productData, setProductData] = useState({
+  //     productName: "",
+  //     productPrice: "",
+  //     imageUrl: "",
+  //   });
 
   const titleChangeHandler = (event) => {
-    // setProductName(event.target.value);
-    setProductData({
-      ...productData,
-      productName: event.target.value,
-    });
+    setProductName(event.target.value); //**çoklu state kullanmı
+    // **çoklu state'i tekli state şeklinde kullanma
+    // setProductData({
+    //   ...productData,
+    //   productName: event.target.value,
+    // });
+    // setProductData((prevState) => {
+    //   return { ...prevState, productName: event.target.value };
+    // });
   };
 
   const priceChangeHandler = (event) => {
-    // setProductPrice(event.target.value);
-    setProductData({
-      ...productData,
-      productPrice: event.target.value,
-    });
+    setProductPrice(event.target.value); //**çoklu state kullanmı
+    // **çoklu state'i tekli state şeklinde kullanma
+    // setProductData({
+    //   ...productData,
+    //   productPrice: event.target.value,
+    // });
+    // setProductData((prevState) => {
+    //   return { ...prevState, productPrice: event.target.value };
+    // });
   };
 
   const imageChangeHandler = (event) => {
-    // setImageUrl(event.target.value);
-    setProductData({
-      ...productData,
-      imageUrl: event.target.value,
-    });
+    setImageUrl(event.target.value); //**çoklu state kullanmı
+    // **çoklu state'i tekli state şeklinde kullanma
+    // setProductData({
+    //   ...productData,
+    //   imageUrl: event.target.value,
+    // });
+    // setProductData((prevState) => {
+    //   return { ...prevState, imageUrl: event.target.value };
+    // });
   };
 
-  console.log(productData)
+  console.log(productData);
 
   return (
     <form className="product-form">
